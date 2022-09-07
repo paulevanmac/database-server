@@ -5,7 +5,7 @@ import { router } from "./routing/router.ts";
 const baseUrl = `${host}${port}/`;
 
 Deno.test(
-    "Test that request with no controller match returns 404",
+    "Test that request without a controller match returns 404",
     async () => {
         const unknownUrl = baseUrl + "unknown";
         const request = new Request(unknownUrl);
@@ -39,7 +39,7 @@ Deno.test(
         const request = new Request(setUrl);
         const result = await router(request);
 
-        assertEquals(result.status, 500);
+        assertEquals(result.status, 400);
     }
 );
 
@@ -67,6 +67,7 @@ Deno.test(
         const getUrl = baseUrl + "get?key=hello";
         const getRequest = new Request(getUrl);
         const getResult = await router(getRequest);
+        assertEquals(getResult.status, 200);
         getResult.text().then((body) => assertEquals(body, "world"));
     }
 );

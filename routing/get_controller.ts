@@ -11,7 +11,7 @@ async function getController(request: Request): Promise<Response> {
         return await new Promise<Response>((resolve) => {
             resolve(
                 new Response(errorResponse, {
-                    status: 500,
+                    status: 400,
                 })
             );
         });
