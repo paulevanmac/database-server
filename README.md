@@ -1,7 +1,7 @@
 ## Deno database server
 
 This is a simple database server created with Deno and TypeScript.  
-To try it out, please follow the steps below.
+To try it out, please run the following steps from the project root.
 
 Install Deno:  
 https://deno.land/#installation
