@@ -19,6 +19,16 @@ async function getController(request: Request): Promise<Response> {
 
     const value = findByKey(key);
 
+    if (!value) {
+        return await new Promise<Response>((resolve) => {
+            resolve(
+                new Response(errorResponse, {
+                    status: 404,
+                })
+            );
+        });
+    }
+
     return await new Promise<Response>((resolve) => {
         resolve(new Response(value, { status: 200 }));
     });

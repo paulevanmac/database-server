@@ -33,13 +33,24 @@ Deno.test(
 );
 
 Deno.test(
-    "Test that get_controller request with missing key returns status 500",
+    "Test that get_controller request with missing param key returns status 400",
     async () => {
         const setUrl = baseUrl + "get?test=hello";
         const request = new Request(setUrl);
         const result = await router(request);
 
         assertEquals(result.status, 400);
+    }
+);
+
+Deno.test(
+    "Test that get_controller request with invalid query key returns status 404",
+    async () => {
+        const setUrl = baseUrl + "get?key=hello";
+        const request = new Request(setUrl);
+        const result = await router(request);
+
+        assertEquals(result.status, 404);
     }
 );
 

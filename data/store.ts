@@ -1,11 +1,11 @@
-const store = {};
+const store: Map<string, string> = new Map();
 
 function save(key: string, value: string) {
-    Object(store)[key] = value;
+    store.set(key, value);
 }
 
-function findByKey(key: string): string {
-    return Object(store)[key];
+function findByKey(key: string): string | undefined {
+    return store.get(key);
 }
 
 export { save, findByKey };
