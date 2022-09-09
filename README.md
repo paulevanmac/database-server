@@ -6,11 +6,11 @@ To try it out, please run the following steps from the project root.
 Install Deno:  
 https://deno.land/#installation
 
-Run the tests:  
-```deno test server_tests.ts```
+Run the server tests in watch mode:
+```deno test --allow-net --watch server_test.ts```
 
-Run the server:  
-```deno run --allow-net server.ts```
+Run the server in watch mode:  
+```deno run --allow-net --watch server.ts```
 
 Set a value:  
 ```curl -X POST "http://localhost:4000/set?hello=world"```
