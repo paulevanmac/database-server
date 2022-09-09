@@ -7,11 +7,11 @@ Install Deno:
 https://deno.land/#installation
 
 
-Run the store tests in watch mode:
-```deno test --allow-net --watch ./data/store_test.ts```
+Run all tests in watch mode:
+```deno test --watch ./**/*_test.ts```
 
-Run the server tests in watch mode:
-```deno test --allow-net --watch server_test.ts```
+Generate test coverage for project: 
+```deno test --coverage=cov_profile && deno coverage cov_profile```
 
 Run the server in watch mode:  
 ```deno run --allow-net --watch server.ts```
