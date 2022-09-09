@@ -6,6 +6,10 @@ To try it out, please run the following steps from the project root.
 Install Deno:  
 https://deno.land/#installation
 
+
+Run the store tests in watch mode:
+```deno test --allow-net --watch ./data/store_test.ts```
+
 Run the server tests in watch mode:
 ```deno test --allow-net --watch server_test.ts```
 
