@@ -23,16 +23,17 @@ const routes: Array<Route> = [
 ];
 
 async function router(request: Request): Promise<Response> {
-    for (const route of routes) {
-        const match = route.pattern.test(request.url);
-        if (match) {
-            return route.controller(request);
-        }
+    const result = routes.find((route) => {
+        return route.pattern.test(request.url);
+    });
+
+    if (!result) {
+        return await new Promise<Response>((resolve) => {
+            resolve(new Response(null, { status: 404 }));
+        });
     }
 
-    return await new Promise<Response>((resolve) => {
-        resolve(new Response(null, { status: 404 }));
-    });
+    return result.controller(request);
 }
 
 export { router };
