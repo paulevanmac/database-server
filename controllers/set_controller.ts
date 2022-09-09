@@ -1,4 +1,4 @@
-import { save } from "../data/store.ts";
+import { save } from "../persistence/store.ts";
 
 async function setController(request: Request): Promise<Response> {
     const url = new URL(request.url);

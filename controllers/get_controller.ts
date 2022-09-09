@@ -1,4 +1,4 @@
-import { findByKey } from "../data/store.ts";
+import { findByKey } from "../persistence/store.ts";
 
 const searchParamIdentifier = "key";
 const errorResponse = "Query param not found.";

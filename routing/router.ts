@@ -1,6 +1,6 @@
-import { defaultController } from "./default_controller.ts";
-import { getController } from "./get_controller.ts";
-import { setController } from "./set_controller.ts";
+import { defaultController } from "../controllers/default_controller.ts";
+import { getController } from "../controllers/get_controller.ts";
+import { setController } from "../controllers/set_controller.ts";
 
 interface Route {
     pattern: URLPattern;
