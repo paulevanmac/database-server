@@ -7,10 +7,10 @@ Install Deno:
 https://deno.land/#installation
 
 
-Run all tests in watch mode:
+Run all tests in watch mode:  
 ```deno test --watch ./**/*_test.ts```
 
-Generate test coverage for project: 
+Generate test coverage for project:  
 ```deno test --coverage=cov_profile && deno coverage cov_profile```
 
 Run the server in watch mode:  
